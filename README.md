@@ -1,2 +1,2 @@
-# Smooth Scrolling News
-Automatic scrolldown for news website
+# Automatic Scroll News
+Automatic scroll on news websites
