@@ -1,21 +1,20 @@
-import cv2
+/EJEMPLO1
 
-# Load the image
-image = cv2.imread("image.jpg")
+import pyautogui
+import time
 
-# Convert the image to the HSV color space
-hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+while True:
+    pyautogui.scroll(10)  # scroll down 10 units
+    time.sleep(5)  # wait for 5 seconds before scrolling again
 
-# Define a range of green color
-lower_green = (29, 86, 6)
-upper_green = (64, 255, 255)
+/EJEMPLO2
 
-# Create a mask for green color
-mask = cv2.inRange(hsv, lower_green, upper_green)
+import pyautogui
 
-# Find contours in the mask
-contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+# check if active window is the one you want
+if pyautogui.getActiveWindow().title() == 'Example Window':
+    pyautogui.scroll(10)
 
-# Count the number of green objects in the image
-green_objects_count = len(contours)
-print(f'Number of green objects: {green_objects_count}')
+/Si estás utilizando Python con la biblioteca pyautogui, puedes utilizar el método pyautogui.getActiveWindow() 
+/para obtener la ventana actualmente activa, y luego comparar el título de la ventana con un valor esperado. 
+/Una vez que hayas determinado que la ventana activa es la que deseas, puedes utilizar el método pyautogui.scroll() para hacer scroll en ella.
